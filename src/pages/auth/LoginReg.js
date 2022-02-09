@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Card, Typography, Tabs, Tab, Box } from "@mui/material";
 import Pic1 from "../../images/pic1.png";
 
+const TabPanel = (props) => {
+  const { children, value, index, ...other } = props;
+  return (
+    <div role="tabpanel" hidden={value !== index}>
+      {value === index && <Box>{children}</Box>}
+    </div>
+  );
+};
+
 const LoginReg = () => {
+  const [value, setValue] = useState(0);
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   return (
     <>
       <Grid
@@ -31,7 +45,12 @@ const LoginReg = () => {
                   borderBottom: "1px solid #e0e0e0",
                 }}
               >
-                <Tabs textColor="secondary" indicatorColor="secondary">
+                <Tabs
+                  textColor="secondary"
+                  indicatorColor="secondary"
+                  value={value}
+                  onChange={handleChange}
+                >
                   <Tab
                     label="Login"
                     sx={{
@@ -50,6 +69,12 @@ const LoginReg = () => {
                   ></Tab>
                 </Tabs>
               </Box>
+              <TabPanel value={value} index={0}>
+                User Login
+              </TabPanel>
+              <TabPanel value={value} index={1}>
+                User Registration
+              </TabPanel>
             </Box>
           </Card>
         </Grid>
