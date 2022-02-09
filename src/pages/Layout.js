@@ -1,13 +1,16 @@
-import React from 'react'
-import Navbar from '../components/Navbar'
+import { CssBaseline } from "@mui/material";
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Navbar from "../components/Navbar";
 
 const Layout = () => {
   return (
     <>
+      <CssBaseline />
       <Navbar />
-      <h1>Home Page</h1>
+      <Outlet />
     </>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
