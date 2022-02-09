@@ -21,6 +21,7 @@ const Navbar = () => {
               }}
               sx={{
                 color: "white",
+                textTransform: "none",
               }}
             >
               Home
@@ -30,6 +31,7 @@ const Navbar = () => {
               to="/contact"
               sx={{
                 color: "white",
+                textTransform: "none",
               }}
               style={({ isActive }) => {
                 return {
@@ -38,6 +40,21 @@ const Navbar = () => {
               }}
             >
               Contact
+            </Button>
+            <Button
+              component={NavLink}
+              to="/login"
+              sx={{
+                color: "white",
+                textTransform: "none",
+              }}
+              style={({ isActive }) => {
+                return {
+                  backgroundColor: isActive ? "#ffc107" : "",
+                };
+              }}
+            >
+              Login/Register
             </Button>
           </Toolbar>
         </AppBar>
