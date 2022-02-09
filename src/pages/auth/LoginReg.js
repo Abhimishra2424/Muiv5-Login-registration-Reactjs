@@ -34,10 +34,11 @@ const LoginReg = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
+            display: { xs: "none", sm: "block" },
           }}
         ></Grid>
 
-        <Grid item lg={5} sm={7}>
+        <Grid item lg={5} sm={7} xs={12}>
           <Card sx={{ width: "100%", height: "100%" }}>
             <Box>
               <Box
