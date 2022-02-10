@@ -3,7 +3,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Layout from "./pages/Layout";
-import LoginReg from "./pages/auth/LoginReg";
+import LoginRegTab from "./pages/auth/LoginRegTab";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="contact" element={<Contact />} />
-            <Route path="login" element={<LoginReg />} />
+            <Route path="login" element={<LoginRegTab />} />
           </Route>
         </Routes>
       </BrowserRouter>

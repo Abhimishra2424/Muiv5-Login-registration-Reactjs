@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Grid, Card, Typography, Tabs, Tab, Box } from "@mui/material";
 import Pic1 from "../../images/pic1.png";
+import Login from "./Login";
 
 const TabPanel = (props) => {
   const { children, value, index, ...other } = props;
@@ -11,7 +12,7 @@ const TabPanel = (props) => {
   );
 };
 
-const LoginReg = () => {
+const LoginRegTab = () => {
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -71,7 +72,7 @@ const LoginReg = () => {
                 </Tabs>
               </Box>
               <TabPanel value={value} index={0}>
-                User Login
+                <Login />
               </TabPanel>
               <TabPanel value={value} index={1}>
                 User Registration
@@ -84,4 +85,4 @@ const LoginReg = () => {
   );
 };
 
-export default LoginReg;
+export default LoginRegTab;
